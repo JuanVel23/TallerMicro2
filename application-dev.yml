@@ -17,8 +17,8 @@ spring:
           predicates:
             - Path=/api/checkout/**
           filters:
-            - AddRequestHeader=x-request-from,gateway
-            - AddResponseHeader=x-response-from,checkout-gateway
+            - AddRequestHeader=x-request-from, gateway
+            - AddResponseHeader=x-response-from, checkout-gateway
         
         - id: products-service
           uri: lb://products-service
