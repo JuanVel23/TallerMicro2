@@ -18,15 +18,15 @@ spring:
             - Path=/api/checkout/**
           filters:
             - AddRequestHeader=x-request-from, gateway
-            - AddResponseHeader=x-response-from, checkout-gateway
+            - AddResponseHeader=x-response-from, checkout-service
         
         - id: products-service
           uri: lb://products-service
           predicates:
             - Path=/api/products/**
           filters:
-            - AddRequestHeader=x-request-from,gateway
-            - AddResponseHeader=x-response-from,products-gateway
+            - AddRequestHeader=x-request-from, gateway
+            - AddResponseHeader=x-response-from, products-service
 logging:
   level:
     org.springframework.cloud.gateway: DEBUG
