@@ -18,7 +18,7 @@ spring:
             - Path=/api/checkout/**
           filters:
             - AddRequestHeader=x-request-from,gateway
-            - AddResponseHeader=x-response-from,checkout-service
+            - AddResponseHeader=x-response-from,checkout-gateway
         
         - id: products-service
           uri: lb://products-service
@@ -26,7 +26,7 @@ spring:
             - Path=/api/products/**
           filters:
             - AddRequestHeader=x-request-from,gateway
-            - AddResponseHeader=x-response-from,products-service
+            - AddResponseHeader=x-response-from,products-gateway
 logging:
   level:
     org.springframework.cloud.gateway: DEBUG
